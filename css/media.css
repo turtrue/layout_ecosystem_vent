@@ -1,0 +1,105 @@
+/* === DESKTOP FIRST === */
+
+/* xl <= Extra extra large (xxl) */
+@media (max-width: 1400px) {
+}
+
+/* lg <= Extra large (xl) */
+@media (max-width: 1200px) {
+    :root {
+        --logo-height: 5em;
+    }
+
+    .nav--top {
+        font-size: 1.4rem;
+    }
+
+    .about__title {
+        font-size: calc(var(--title-font-size) * 1.2);
+    }
+    .about__img {
+        margin-left: 1em;
+    }
+}
+
+/* md <= Large (lg) */
+@media (max-width: 992px) {
+    .burger-btn--header {
+        display: block;
+    }
+
+    .nav--top {
+        height: calc(100vh - var(--header-height));
+        position: absolute;
+        top: var(--header-height);
+        right: 0;
+        font-size: 1.8rem;
+        background-color: var(--dark-gray);
+        transform: translateX(100%);
+        transition: transform var(--transition);
+    }
+    .nav--top.active {
+        transform: translateX(0);
+    }
+    .nav--top ul {
+        padding: 2em 1em;
+        display: block;
+    }
+    .nav--top li + li {
+        margin-top: 1em;
+    }
+
+    .about__title {
+        text-align: center;
+    }
+    .about__buttons {
+        text-align: center;
+    }
+    .about__buttons button {
+        max-width: 500px;
+    }
+    .about__img {
+        display: none;
+    }
+}
+
+/* sm <= Medium (md) */
+@media (max-width: 768px) {
+}
+
+/* xs <= Small (sm) */
+@media (max-width: 576px) {
+    :root {
+        --title-font-size: 2.4rem;
+    }
+
+    .button {
+        font-size: 1.4rem;
+    }
+}
+
+/* === MOBILE FIRST === */
+
+/* Custom (xs) */
+@media (min-width: 0) {
+}
+
+/* Small (sm) */
+@media (min-width: 576px) {
+}
+
+/* Medium (md) */
+@media (min-width: 768px) {
+}
+
+/* Large (lg) */
+@media (min-width: 992px) {
+}
+
+/* Extra large (xl) */
+@media (min-width: 1200px) {
+}
+
+/* Extra extra large (xxl) */
+@media (min-width: 1400px) {
+}

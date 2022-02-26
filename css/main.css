@@ -1,0 +1,242 @@
+/* USER VARIABLES SECTION */
+
+:root {
+    font-size: 10px;
+
+    --accent: #a6c774;
+    --dark-gray: #303030;
+
+    --text-color: black;
+    --text-font-size: 1.8rem;
+    --title-font-size: 3rem;
+    --line-height: 1.65;
+    --text-font-family: montserrat, sans-serif;
+    --title-font-family: montserrat, sans-serif;
+    --letter-spacing: 0.13em;
+
+    --shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.5);
+
+    --logo-height: 6em;
+    --decor-line-height: 6px;
+    --header-height: calc(var(--logo-height) + var(--decor-line-height));
+
+    --transition: 0.2s ease-in-out;
+    /* --systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; */
+}
+
+/* BOOTSTRAP SETTINGS SECTION */
+
+/* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    --bs-gutter-x: 0.625rem;
+}
+.row,
+.row > * {
+    --bs-gutter-x: 1.25rem;
+}
+
+/* FONTS LOAD SECTION */
+
+@font-face {
+    src: url("../fonts/montserrat-v23-latin_cyrillic-regular.woff2")
+        format("woff2");
+    font-family: "montserrat";
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    src: url("../fonts/montserrat-v23-latin_cyrillic-700.woff2") format("woff2");
+    font-family: "montserrat";
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* GENERAL CSS SETTINGS */
+
+::placeholder {
+    color: #666;
+}
+::selection {
+    background-color: var(--accent);
+    color: #fff;
+}
+input,
+textarea {
+    outline: none;
+}
+input:focus:required:invalid,
+textarea:focus:required:invalid {
+    border-color: red;
+}
+input:required:valid,
+textarea:required:valid {
+    border-color: green;
+}
+
+body {
+    min-width: 320px;
+    position: relative;
+    font-family: var(--text-font-family);
+    font-size: var(--text-font-size);
+    line-height: var(--line-height);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title-font-family);
+}
+
+ul {
+    margin-bottom: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* USER STYLES */
+
+.my-container {
+    margin: 0 auto;
+    padding: 0 var(--bs-gutter-x, 0.5rem);
+    width: 100%;
+    max-width: 1680px;
+}
+
+.burger-btn {
+    line-height: 1;
+    font-size: 3rem;
+    color: white;
+    border: initial;
+    background: initial;
+}
+.burger-btn--header {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: none;
+    transform: translateY(-50%);
+}
+
+.button {
+    padding: 1.5em;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: initial;
+    border-radius: 3em;
+    background-color: var(--accent);
+    box-shadow: var(--shadow);
+    transition: opacity var(--transition);
+}
+.button:hover {
+    opacity: 0.9;
+}
+
+/* NAVIGATION */
+
+.nav a {
+    color: white;
+    letter-spacing: var(--letter-spacing);
+    text-transform: uppercase;
+    transition: color var(--transition);
+}
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+    color: var(--accent);
+}
+.nav a.current {
+    color: var(--accent);
+}
+.nav--top ul {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    background-color: var(--dark-gray);
+    border-bottom: var(--decor-line-height) solid var(--accent);
+}
+.header__logo {
+    height: var(--logo-height);
+    display: inline-block;
+}
+.header__logo svg {
+    height: 100%;
+}
+
+/* ABOUT */
+
+.about {
+    padding-top: var(--header-height);
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        linear-gradient(90.01deg, #000000 -17.83%, rgba(0, 0, 0, 0) 87.68%);
+}
+.about__body {
+    position: relative;
+}
+.about__title {
+    margin-bottom: 2em;
+    font-size: calc(var(--title-font-size) * 1.5);
+    font-weight: bold;
+    color: white;
+    letter-spacing: var(--letter-spacing);
+    text-transform: uppercase;
+    text-shadow: var(--shadow);
+}
+.about__title span {
+    color: var(--accent);
+}
+.about__buttons .button + .button {
+    margin-top: 1.8em;
+}
+.about__img {
+    margin-left: 3em;
+    height: 100%;
+    border-radius: 4em;
+    box-shadow: var(--shadow);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
