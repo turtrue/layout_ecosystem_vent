@@ -10,6 +10,10 @@
         --logo-height: 5em;
     }
 
+    .button {
+        font-size: 1.4rem;
+    }
+
     .nav--top {
         font-size: 1.4rem;
     }
@@ -24,6 +28,10 @@
 
 /* md <= Large (lg) */
 @media (max-width: 992px) {
+    :root {
+        --radius: 3em;
+    }
+
     .burger-btn--header {
         display: block;
     }
@@ -61,6 +69,19 @@
     .about__img {
         display: none;
     }
+
+    .about-descr__item {
+        text-align: initial !important;
+    }
+    .about-descr__img {
+        height: 300px;
+    }
+    .about-descr__text {
+        margin-top: 1em;
+    }
+    .about-descr__text h2 {
+        text-align: center;
+    }
 }
 
 /* sm <= Medium (md) */
@@ -71,10 +92,15 @@
 @media (max-width: 576px) {
     :root {
         --title-font-size: 2.4rem;
+        --radius: 2em;
     }
 
-    .button {
-        font-size: 1.4rem;
+    .about-descr__item {
+        padding: 1em;
+        font-size: var(--text-font-size);
+    }
+    .about-descr__img {
+        height: 200px;
     }
 }
 
