@@ -86,6 +86,13 @@
     .partners__item {
         padding: 1em;
     }
+
+    .form__bg {
+        background: none !important;
+    }
+    .form__content {
+        margin: 0 auto;
+    }
 }
 
 /* sm <= Medium (md) */
@@ -110,6 +117,12 @@
     }
     .partners__item {
         height: 200px;
+    }
+
+    .form__content {
+        width: 100%;
+        max-width: initial;
+        min-width: initial;
     }
 }
 
@@ -141,6 +154,13 @@
     .partners__title {
         padding: 0;
         font-size: calc(var(--title-font-size) / 1.1);
+    }
+
+    .form__bg {
+        padding: 2em 0 4em;
+    }
+    .form__body {
+        padding: 3em 0.5em;
     }
 }
 

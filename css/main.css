@@ -5,6 +5,7 @@
 
     --accent: #a6c774;
     --dark-gray: #303030;
+    --light-gray: #7b7b7b;
 
     --text-color: black;
     --text-font-size: 2rem;
@@ -14,7 +15,7 @@
     --title-font-family: montserrat, sans-serif;
     --letter-spacing: 0.13em;
 
-    --shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.5);
+    --shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
 
     --logo-height: 6em;
     --decor-line-height: 6px;
@@ -157,25 +158,31 @@ a {
     color: inherit;
 }
 .button--light {
-    font-weight: normal;
+    font-weight: 400;
     color: white;
     background: transparent;
     border: 2px solid white;
     box-shadow: none;
 }
 .button--light:hover {
-    opacity: 0.9;
     color: white;
+}
+.button--form {
+    width: 100%;
+    font-weight: 400;
+    color: var(--text-color);
+}
+.button--form:hover {
+    color: var(--text-color);
 }
 
 .bg-wrapper {
     background: linear-gradient(
         180deg,
-        rgba(48, 48, 48) 0%,
-        rgba(48, 48, 48) 20%,
-        rgba(166, 199, 116, 0.9) 85%,
-        rgba(166, 199, 116, 0.9) 90%,
-        rgba(48, 48, 48) 100%
+        var(--dark-gray) 0%,
+        var(--dark-gray) 20%,
+        var(--accent) 70%,
+        var(--dark-gray) 100%
     );
 }
 
@@ -426,4 +433,62 @@ a {
 }
 .partners__line {
     margin-top: 2em;
+}
+
+/* FORM */
+
+.form__bg {
+    padding: 4em 0 6em;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+}
+.form__content {
+    max-width: 50%;
+    min-width: 600px;
+}
+.form__title {
+    margin-bottom: 1em;
+    color: white;
+    text-align: center;
+    letter-spacing: var(--letter-spacing);
+    font-size: var(--title-font-size);
+    text-transform: uppercase;
+}
+.form__body {
+    padding: 3em 2em;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: var(--light-gray);
+    border-radius: var(--radius);
+}
+.form__body input::placeholder {
+    color: inherit;
+    text-align: center;
+    letter-spacing: var(--letter-spacing);
+    text-transform: uppercase;
+}
+.form__body > input,
+.form__body > input {
+    padding: 0.5em 1em;
+    width: 100%;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius);
+    background-color: transparent;
+}
+.form__body > input + input {
+    margin-top: 1em;
+}
+.form__button {
+    margin-top: 2em;
+}
+.form__privacy {
+    margin: 1em auto 0;
+    max-width: 500px;
+    font-size: calc(var(--text-font-size) / 1.5);
+    text-transform: uppercase;
+    text-align: center;
+}
+.form__privacy span {
+    color: var(--accent);
 }
