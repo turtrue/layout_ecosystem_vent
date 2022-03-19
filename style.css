@@ -111,13 +111,6 @@ a {
 
 /* USER STYLES */
 
-.my-container {
-    margin: 0 auto;
-    padding: 0 var(--bs-gutter-x, 1.25rem);
-    width: 100%;
-    max-width: 1320px;
-}
-
 .decor-line {
     width: 55%;
     height: var(--decor-line-height);
